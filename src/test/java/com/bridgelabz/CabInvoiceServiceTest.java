@@ -27,15 +27,13 @@ public class CabInvoiceServiceTest {
 	}
 
 	@Test
-	public void givenMultipleRides_shouldReturnTotalFare(){
-		InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
-		Rides[] rides ={ new Rides(2.0, 5),
-							new Rides(0.1,1)
+	public void givenMultipleRide_ShouldReturnInvoiceSummary(){
+		InvoiceGenerator invoiceGerator = new InvoiceGenerator();
+		Rides[] rides = {new Rides(2.0, 5),
+				new Rides(0.11,1)
 		};
-		double fare = invoiceGenerator.CalculateFare(rides);
-		Assertions.assertEquals(30,fare,0.0);
+		InvoiceSummary summary = invoiceGerator.CalculateFare(rides);
+		InvoiceSummary expectedInvoiceSummary = new InvoiceSummary(2, 30.0);
+		Assertions.assertEquals(expectedInvoiceSummary,summary);
 	}
-
-
-
 }
