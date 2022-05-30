@@ -41,7 +41,7 @@ public class CabInvoiceServiceTest {
 
 
 	@Test
-	public void GivenDistanceAndTimeForPremium_ShouldReturnTotalFare() {
+	public void GivenDistanceAndTimeForUserId_ShouldReturnTotalFare() {
 		InvoiceGenerator invoiceGerator = new InvoiceGenerator();
 		String userId = "John";
 		Rides[] rides = {new Rides(2.0, 5),
